@@ -28,17 +28,17 @@ nonrddetailServer <- function(input,output,session,dms_token) {
     
     
     
-    jhhrvvoucherpkg::srcnonrddetail(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::srcnonrddetail(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
     
     
-    jhhrvvoucherpkg::odsnonrddetail(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::odsnonrddetail(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
     
     #按--清除中间表
     str <-".0"
     FYear2=sprintf("%s%s",FYear ,str)
     FMonth2=sprintf("%s%s",FMonth ,str)
-    jhhrvvoucherpkg::srcmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
-    jhhrvvoucherpkg::odsmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::srcmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::odsmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
     
     
     tsui::pop_notice("非研发工时相关数据已清除成功")

@@ -25,22 +25,22 @@ salaryServer <- function(input,output,session,dms_token) {
     
     #按承担组织清除--工资
     
-    jhhrvvoucherpkg::stdsalary(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::stdsalary(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
     
     
     
-    jhhrvvoucherpkg::srcsalary(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::srcsalary(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
     
     
-    jhhrvvoucherpkg::odssalary(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::odssalary(token = token,FYear =FYear ,FMonth =FMonth ,FExpenseOrgID =FExpenseOrgID )
     
     #按--清除中间表
     str <-".0"
     FYear2=sprintf("%s%s",FYear ,str)
     FMonth2=sprintf("%s%s",FMonth ,str)
     
-    jhhrvvoucherpkg::srcmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
-    jhhrvvoucherpkg::odsmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::srcmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
+    mdljhhrvPkg::odsmiddleTable(token = token,FYear =FYear2 ,FMonth =FMonth2 ,FExpenseOrgID =FExpenseOrgID )
     
    
     tsui::pop_notice("工资相关数据已清除成功")

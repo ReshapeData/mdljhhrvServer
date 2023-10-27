@@ -612,7 +612,7 @@ voucherserver <- function(input, output, session, dms_token) {
                         var_hr_year = var_hr_year()
                         var_hr_month = var_hr_month()
                         
-                        jhhrvvoucherpkg::outputvourchermain(dms_token, var_hr_year, var_hr_month, var_environment)
+                        mdljhhrvPkg::outputvourchermain(dms_token, var_hr_year, var_hr_month, var_environment)
                         tsui::pop_notice('凭证生成成功')
                         
                         
@@ -748,7 +748,7 @@ voucherserver <- function(input, output, session, dms_token) {
 #                         print(var_hr_year)
 #                         print(class(var_hr_year))
 #
-#                         jhhrvvoucherpkg::reoutputvourchermain(dms_token, var_hr_year, var_hr_month, var_environment)
+#                         mdljhhrvPkg::reoutputvourchermain(dms_token, var_hr_year, var_hr_month, var_environment)
 #                         tsui::pop_notice('凭证重新生成成功')
 #
 #                         sql1 = sprintf(
@@ -804,7 +804,7 @@ viewvoucher <- function(input, output, session, dms_token) {
                           var_hr_year = var_hr_year()
                           var_hr_month = var_hr_month()
                           
-                          jhhrvvoucherpkg::middlevourchermain(dms_token, var_hr_year, var_hr_month, var_environment)
+                          mdljhhrvPkg::middlevourchermain(dms_token, var_hr_year, var_hr_month, var_environment)
                           
                           sql = sprintf(
                             "select FDate,FYear,FMonth,FBillNO,FSeq,FNumber,FName,FTaxDeclarationOrg,FExpenseOrgID,FCategoryType,FNotes,FAccountBookID,
